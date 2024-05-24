@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shadow-wrap">
+ <div class="form-wrap">
+  <h3>REGISTER </h3>
+<form method="POST">
+ {% csrf_token %}
+    {{form.username.label}}
+    {{form.username}}
+
+    {{form.lastname.label}}
+    {{form.lastname}}
+
+    {{form.email.label}}
+    {{form.email}}
+
+    {{form.password1.label}}
+    {{form.password1}}
+
+    {{form.password2.label}}
+    {{form.password2}}
+ {% comment %} {%for field in form %}
+    {{field.label}}
+    {{field}}
+ {% end for %} {% endcomment %}
+ <button type="submit">Submit</button>
+</form>
+<a class="signup-link" href="{% url "base:login" %}">Login</a>
+</div>
+</div>
+{% endblock content %}a

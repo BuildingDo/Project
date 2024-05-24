@@ -1,0 +1,3 @@
+# Path: templates/search/indexes/core/disease_text.txt
+{{ object.name }}
+{{ object.symptoms.all|join:" " }}
